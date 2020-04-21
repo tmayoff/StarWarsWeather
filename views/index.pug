@@ -1,0 +1,12 @@
+extends layout
+
+block content
+
+  div.container
+    img.background-img(src=planet.img)
+    div.background-color
+  
+    div.content
+      h1 Star Wars Weather
+      h2 #{temp}°C
+      h2= planet.name

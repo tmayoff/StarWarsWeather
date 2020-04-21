@@ -1,0 +1,52 @@
+body {
+  height: 100vh;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+  overflow: hidden;
+}
+
+a {
+  color: #00B7FF;
+}
+
+h1 {
+  color: black;
+  font-family: fantasy;
+  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+  font-size: 40px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background-img {
+  object-fit: cover;
+  filter: blur(4px);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+}
+
+.background-color {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: black;
+
+  z-index: -2;
+}
+
+.content {
+  padding: 20px;
+  border: 2px solid white;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
