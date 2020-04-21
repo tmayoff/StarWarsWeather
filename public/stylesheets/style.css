@@ -1,7 +1,7 @@
 body {
   height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-
+  background-color: black;
   overflow: hidden;
 }
 
@@ -16,20 +16,24 @@ h1 {
   font-size: 40px;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .background-img {
-  object-fit: cover;
+  /* object-fit: cover; */
   filter: blur(4px);
   position: absolute;
   top: 0px;
   left: 0px;
   z-index: -1;
+} 
+
+.content {
+  padding: 20px;
+  border: 2px solid white;
+  color: white;
 }
+
+/*
+
+
 
 .background-color {
   position: absolute;
@@ -43,10 +47,7 @@ h1 {
 }
 
 .content {
-  padding: 20px;
-  border: 2px solid white;
-  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
