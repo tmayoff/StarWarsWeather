@@ -1,0 +1,13 @@
+{
+  "name": "starwars_weather",
+  "version": "0.0.1",
+  "description": "Gets the weather in Star Wars planets",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tyler Mayoff",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {}
+}
