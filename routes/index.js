@@ -1,5 +1,6 @@
 var express = require('express');
 var request = require('request');
+var config = require('../config');
 
 var router = express.Router();
 
@@ -11,7 +12,7 @@ router.get('/', function(req, res, next) {
     return;
   }
 
-  request(`https://api.openweathermap.org/data/2.5/weather?lat=${req.query.lat}&lon=${req.query.long}&appid=2df1975fad489b5fbdbaa315e2b67d0e`, {json: true}, (wErr, wRes, wBody) => {
+  request(`https://api.openweathermap.org/data/2.5/weather?lat=${req.query.lat}&lon=${req.query.long}&appid=${config.openweathermapApiKey}`, {json: true}, (wErr, wRes, wBody) => {
     console.log(wBody);
     let p = getPlanet(wBody.main.temp, wBody.main.humidity);
     res.render('index', { body: wBody, temp: kelvinToCelsius(wBody.main.temp), planet: p });
