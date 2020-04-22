@@ -7,13 +7,26 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  if (req.query.lat == undefined || req.query.lat == undefined) {
+  if ((req.query.lat == undefined || req.query.lat == undefined) && req.query.city == undefined) {
     next({message: "No location chosen"});
     return;
   }
 
-  request(`https://api.openweathermap.org/data/2.5/weather?lat=${req.query.lat}&lon=${req.query.long}&appid=${config.openweathermapApiKey}`, {json: true}, (wErr, wRes, wBody) => {
-    console.log(wBody);
+  let url = "https://api.openweathermap.org/data/2.5/weather?";
+  if (req.query.city) {
+    url += `q=${req.query.city}`;
+  } else {
+    url += `lat=${req.query.lat}&lon=${req.query.long}`;
+  }
+  url += `&appid=${config.openweathermapApiKey}`;
+
+
+  request(url, {json: true}, (wErr, wRes, wBody) => {
+    if(wBody.cod == "404") {
+      next(wBody);
+      return;
+    }
+
     let p = getPlanet(wBody.main.temp, wBody.main.humidity);
     res.render('index', { body: wBody, temp: kelvinToCelsius(wBody.main.temp), planet: p });
 
