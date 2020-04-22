@@ -38,4 +38,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+if (app.get('env') === 'production') {
+  app.listen(3000);
+}
+
 module.exports = app;
