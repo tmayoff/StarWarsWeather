@@ -1,6 +1,8 @@
 body {
   height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url('/images/stars.jpg');
+  background-size: cover;
   background-color: black;
   overflow: hidden;
 }
