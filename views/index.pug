@@ -2,11 +2,12 @@ extends layout
 
 block content
 
-  div.p-5
+  div.flex-grow-1.container-fluid.p-5
     div.d-flex.flex-grow-1.justify-content-center
       div.content.d-flex.flex-column.text-center
-        h1 Star Wars Weather
+        h1.swFont Star Wars Weather
         h2 #{temp}°C
         h2= planet.name
 
-    img.background-img(src=planet.img)
+    div.img-container(style="background-image: url('" + planet.img + "');")
+    //- img.background-img(src=planet.img)

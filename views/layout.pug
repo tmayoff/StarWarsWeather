@@ -2,6 +2,7 @@ doctype html
 html
   head
     title= title
+    meta(name="viewport" content="width=device-width, initial-scale=1")
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
     script(src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous")
@@ -18,14 +19,15 @@ html
             span.sr-only Toggle navigation
             span.navbar-toggler-icon
           div.collapse.navbar-collapse.d-xl-flex.justify-content-xl-center#navbarSupportedContent
-            form.form-inline.m-1.m-xl-0.mr-xl-2(method="GET")
-              div.input-group
-                input.form-control(placeholder="City" name="city")
-                div.input-group-append
-                  button.btn.btn-outline-warning Search
-            button.btn.btn-outline-success#use-location-btn Use Location
+            div.d-flex.justify-content-center
+              form.text-center.form-inline.m-1.m-xl-0.mr-xl-2(method="GET")
+                div.input-group
+                  input.form-control(placeholder="City" name="city")
+                  div.input-group-append
+                    button.btn.btn-outline-warning Search
+              button.m-1.btn.btn-outline-success#use-location-btn Use Location
 
-    main.flex-grow-1
+    main.d-flex.flex-grow-1
       block content
 
     footer.bg-dark.p-1.text-light.text-center
