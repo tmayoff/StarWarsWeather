@@ -23,7 +23,7 @@ router.get('/', function(req, res, next) {
 
 
   request(url, {json: true}, (wErr, wRes, wBody) => {
-    if(wBody.cod == "404") {
+    if(wBody.cod != 200) {
       next(wBody);
       return;
     }
